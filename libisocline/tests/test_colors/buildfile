@@ -1,0 +1,3 @@
+import libs = libisocline%lib{isocline}
+
+exe{test_colors}: {h c}{**} $libs testscript{**}

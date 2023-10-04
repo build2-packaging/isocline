@@ -1,0 +1,1 @@
+../../upstream/src/highlight.h

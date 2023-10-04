@@ -1,0 +1,17 @@
+: 1
+name: libisocline
+version: 1.0.9
+language: c
+project: isocline
+summary: Isocline is a pure C library that can be used as an alternative to the GNU readline library.
+license: MIT
+
+description-file: README.md
+url: https://github.com/daanx/isocline
+
+package-description-file: PACKAGE-README.md
+package-url: https://github.com/build2-packaging/isocline
+package-email: packaging@build2.org
+
+depends: * build2 >= 0.16.0
+depends: * bpkg >= 0.16.0
