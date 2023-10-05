@@ -8,6 +8,7 @@ license: MIT
 
 description-file: README.md
 url: https://github.com/daanx/isocline
+doc-url: https://daanx.github.io/isocline/
 
 package-description-file: PACKAGE-README.md
 package-url: https://github.com/build2-packaging/isocline

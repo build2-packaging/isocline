@@ -9,7 +9,7 @@ h{*}: c.importable = true
 
 # Every exe{} in this subproject is by default a test.
 #
-# exe{*}: test = true
+exe{*}: test = true
 
 # The test target for cross-testing (running tests under Wine, etc).
 #

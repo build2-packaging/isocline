@@ -1,3 +1,9 @@
 import libs = libisocline%liba{isocline}
 
-exe{example}: {h c}{**} $libs testscript{**}
+exe{example}: {h c}{**} $libs
+{
+  # This example is interactive.
+  # Running tests with it won't work.
+  #
+  test = false
+}
