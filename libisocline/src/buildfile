@@ -1,29 +1,33 @@
 # Public headers.
 #
 pub = [dir_path] ../include/
+
 include $pub
+
 pub_hdrs = $($pub/ pub_hdrs)
 
-# Headers and Sources
+lib{isocline}: $pub/{$pub_hdrs}
+
+# Private headers and sources as well as dependencies.
 #
-lib{isocline}: libul{isocline}: $pub/{$pub_hdrs} h{*} h{*.c -isocline.c} c{isocline}
+lib{isocline}: h{*} h{*.c -isocline.c} c{isocline}
 
 # Build options.
 #
 src_pfx_inc = [dir_path] $src_root/include/
 src_pfx_src = [dir_path] $src_root/src/
+
 c.poptions =+ "-I$src_pfx_src" "-I$src_pfx_inc"
 
-# Automatic DLL Symbol Exporting
-#
-libs{isocline}: def{isocline}: include = ($cxx.target.system == 'win32-msvc')
-def{isocline}: libul{isocline}
-if ($cxx.target.system == 'mingw32')
-  cxx.loptions += -Wl,--export-all-symbols
+# {hbmia obja}{*}: c.poptions += -DLIBISOCLINE_STATIC_BUILD
+# {hbmis objs}{*}: c.poptions += -DLIBISOCLINE_SHARED_BUILD
 
 # Export options.
 #
 lib{isocline}: c.export.poptions = "-I$src_pfx_inc"
+
+# liba{isocline}: c.export.poptions += -DLIBISOCLINE_STATIC
+# libs{isocline}: c.export.poptions += -DLIBISOCLINE_SHARED
 
 # For pre-releases use the complete version to make sure they cannot be used
 # in place of another pre-release or the final version. See the version module
