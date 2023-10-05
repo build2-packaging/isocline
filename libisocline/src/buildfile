@@ -6,11 +6,11 @@ include $pub
 
 pub_hdrs = $($pub/ pub_hdrs)
 
-lib{isocline}: $pub/{$pub_hdrs}
+liba{isocline}: $pub/{$pub_hdrs}
 
 # Private headers and sources as well as dependencies.
 #
-lib{isocline}: h{*} h{*.c -isocline.c} c{isocline}
+liba{isocline}: h{*} h{*.c -isocline.c} c{isocline}
 
 # Build options.
 #
@@ -24,7 +24,7 @@ c.poptions =+ "-I$src_pfx_src" "-I$src_pfx_inc"
 
 # Export options.
 #
-lib{isocline}: c.export.poptions = "-I$src_pfx_inc"
+liba{isocline}: c.export.poptions = "-I$src_pfx_inc"
 
 # liba{isocline}: c.export.poptions += -DLIBISOCLINE_STATIC
 # libs{isocline}: c.export.poptions += -DLIBISOCLINE_SHARED
@@ -34,9 +34,9 @@ lib{isocline}: c.export.poptions = "-I$src_pfx_inc"
 # for details on the version.* variable values.
 #
 if $version.pre_release
-  lib{isocline}: bin.lib.version = "-$version.project_id"
+  liba{isocline}: bin.lib.version = "-$version.project_id"
 else
-  lib{isocline}: bin.lib.version = "-$version.major.$version.minor"
+  liba{isocline}: bin.lib.version = "-$version.major.$version.minor"
 
 # Don't install private headers.
 #
