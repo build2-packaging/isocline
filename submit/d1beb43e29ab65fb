@@ -1,0 +1,8 @@
+: 1
+name: libisocline
+version: 1.0.9
+language: c
+project: isocline
+summary: Isocline is a pure C library that can be used as an alternative to\
+ the GNU readline library.
+license: MIT
