@@ -32,10 +32,10 @@ Add the respective dependency in your project's `manifest` file to make the pack
 depends: libisocline ^1.0.9
 ```
 
-The library can then be imported by the following declaration in a `buildfile`.
+The static library can then be imported by the following declaration in a `buildfile`. Please note that the `libisocline` package only exports the static library as the shared build is not supported by the upstream repository.
 
 ```
-import isocline = libisocline%lib{isocline}
+import isocline = libisocline%liba{isocline}
 ```
 
 ## Configuration
@@ -45,6 +45,7 @@ There are no configuration options available.
 ## Issues and Notes
 
 - Warnings are generated due to unused private functions in the library.
+- Shared library builds are not supported by the upstream repository. Even the use of automatic DLL symbol export does not seem to solve that issue.
 
 ## Contributing
 
