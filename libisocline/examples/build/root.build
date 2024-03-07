@@ -1,3 +1,8 @@
+# Make sure that the older GCC versions don't fail with the "'for' loop
+# initial declarations are only allowed in C99 or C11 mode" error.
+#
+c.std = 99
+
 using c
 
 h{*}: extension = h
